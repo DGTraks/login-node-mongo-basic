@@ -1,0 +1,16 @@
+
+1) Este error se aparecia en routes/index.js dentro de la funcion get al metodo res.render 
+se le pasaba '/pagina' donde en realidad correspondia 'pagina', el error consistia en '/'
+
+GET /signup 500 3.827 ms - 1505
+Error: Failed to lookup view "/signup" in views directory "/home/diego/Escritorio/node-login-passport/src/views"
+    at Function.render (/home/diego/Escritorio/node-login-passport/node_modules/express/lib/application.js:580:17)
+    at ServerResponse.render (/home/diego/Escritorio/node-login-passport/node_modules/express/lib/response.js:1012:7)
+    at /home/diego/Escritorio/node-login-passport/src/routes/index.js:10:9
+    at Layer.handle [as handle_request] (/home/diego/Escritorio/node-login-passport/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/diego/Escritorio/node-login-passport/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/diego/Escritorio/node-login-passport/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/diego/Escritorio/node-login-passport/node_modules/express/lib/router/layer.js:95:5)
+    at /home/diego/Escritorio/node-login-passport/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/diego/Escritorio/node-login-passport/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/diego/Escritorio/node-login-passport/node_modules/express/lib/router/index.js:275:10)

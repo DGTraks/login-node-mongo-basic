@@ -1,0 +1,7 @@
+
+
+Diferencias
+
+1) Se ha mantenido la version actual de mongodb
+   - En el ejemplo original, el autor instala una version previa de mongodb (v5.2.8)
+   por encontrar notificaciones de error en las versiones mas actuales

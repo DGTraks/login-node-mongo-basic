@@ -4,12 +4,13 @@ const path = require('path');
 const morgan = require('morgan');
 const passport = require('passport');
 const session = require('express-session');
+const flash = require('connect-flash');
 
 
 // Initializations
 const app = express();
 require('./database');
-require('./passport/local-auth')
+require('./passport/local-auth');
 
 // settings
 app.set('views', path.join(__dirname,'views'));
@@ -25,8 +26,15 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
+
+app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use((req, res, next) => {
+    app.locals.signupMessage = req.flash('signupMessage');
+    next();
+});
 
 // Routes
 const routes = require('./routes/index');

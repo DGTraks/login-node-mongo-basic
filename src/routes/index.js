@@ -18,7 +18,7 @@ router.post('/signup', passport.authenticate('local-signup', {
 }));
 
 router.get('/signin', (req, res, next) => {
-
+   res.render('signin');
 });
 
 router.post('/signin', (req, res, next) => {

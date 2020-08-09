@@ -19,7 +19,7 @@ passport.use('local-signup', new LocalStrategy({
     passReqToCallback: true
 }, async (req, email, password, done) => {
     
-    const user = User.findOne({email: email});
+    const user = await User.findOne({email: email});
 
     if(user) {
 
@@ -32,6 +32,7 @@ passport.use('local-signup', new LocalStrategy({
         newUser.password = newUser.encryptPassword(password);
         await newUser.save();
         done(null, newUser);
+       
     }
 
 }));
